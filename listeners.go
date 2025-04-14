@@ -467,6 +467,7 @@ func (na NetworkAddress) ListenQUIC(ctx context.Context, portOffset uint, config
 			&quic.Config{
 				Allow0RTT: true,
 				Tracer:    qlog.DefaultConnectionTracer,
+				InitialPacketSize: 1262,
 			},
 		)
 		if err != nil {
